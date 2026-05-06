@@ -19,18 +19,42 @@
         }
 
     </style>
+    <style>
+        /* Estilo opcional para mostrar que a imagem é clicável */
+        .minha-imagem {
+            cursor: pointer;
+            width: 300px; /* Ajuste o tamanho aqui */
+            transition: transform 0.2s;
+        }
+        .minha-imagem:hover {
+            transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+        }
+    </style>
 </head>
 <body>
-    <audio controls>
-    <source src="musicas/capoeirashow-faixa-4-c80368.mp3" type="audio/ogg">
-    <source src="musicas/capoeirashow-faixa-4-c80368.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="musica" src="musicas/capoeirashow-capoeira-pancadao-remix-by-dj-bugao-2551cb.mp3"></audio>
     <h1>Analise o esqueleto capoerista</h1>
     <p style="font-size: 30px; background: linear-gradient(90deg, #ff8a00, #e52e71); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;">
     Esse esqueleto aprendeu capoeira, capoeira esse esqueleto aprendeu, mas se capoeira ele aprendeu sera que capoeira ele sabe?
     </p>
-    <h1 style="font-family: 'Courier New', Courier, monospace;">
-    <img src="img/156f22f15fe47fe1365dfa63966a0f66.gif" alt="oi" width="700" height="750" class="d-block mx-auto" alt="...">
+    <img src="img/156f22f15fe47fe1365dfa63966a0f66.gif" width="700" height="750" class="d-block mx-auto"
+    alt="Clique para tocar" 
+        class="minha-imagem" 
+        onclick="tocarMusica()">
+
+
+<script>
+        function tocarMusica() {
+            var audio = document.getElementById("musica");
+            
+            // Verifica se está pausado para dar o play, ou vice-versa
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
